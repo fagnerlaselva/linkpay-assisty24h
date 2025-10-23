@@ -1,48 +1,48 @@
 <template>
-    <div class="bg-gray-100 flex h-screen">
+    <div class="flex h-screen">
         <!-- Sidebar Component -->
         <Sidebar />
-
+       
         <!-- Main Content -->
-        <main class="flex-1 p-6 bg-gray-100">
+        <main class="flex-1 p-6">
             <!-- Header -->
-            <div class="mb-6">
-                <div class="flex items-center space-x-4">
-                    <button @click="goBack" class="text-gray-500 hover:text-gray-700">
-                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-                    <div>
-                        <h1 class="text-2xl font-semibold text-gray-900">Novo Cliente</h1>
-                        <p class="text-gray-600">Cadastre um novo cliente no sistema</p>
-                    </div>
-                </div>
-            </div>
-
+			<div class="">
+				<div class="flex items-center space-x-4 max-w-lg mx-auto w-full">
+					<button @click="goBack" class="text-gray-500 hover:text-gray-700">
+						<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+						</svg>
+					</button>
+					<div>
+						<h1 class="text-2xl font-bold text-gray-900">Novo Cliente</h1>
+					</div>
+				</div>
+			</div>
             <!-- Form Container -->
-            <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col lg:flex-row max-w-lg mx-auto w-full">
+            <div class="rounded-xl overflow-hidden flex flex-col lg:flex-row max-w-lg mx-auto w-full">
                 <!-- Form Section -->
                 <div class="flex-1 p-6">
+                  
                     <form @submit.prevent="createClient" class="space-y-6">
                     <!-- Nome -->
                     <div>
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
+                        <label for="name" class="block text-sm font-base text-gray-700 mb-2">
                             Nome Completo *
                         </label>
+
                         <input
                             id="name"
                             v-model="form.name"
                             type="text"
                             required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            class="w-full rounded-xl border border-[#e0e0e0] bg-white  py-2 px-4 text-base font-base text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                             placeholder="Digite o nome completo"
                         >
                     </div>
 
                     <!-- Email -->
                     <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+                        <label for="email" class="block text-sm font-base text-gray-700 mb-2">
                             Email *
                         </label>
                         <input
@@ -50,14 +50,14 @@
                             v-model="form.email"
                             type="email"
                             required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            class="w-full rounded-xl border border-[#e0e0e0] bg-white  py-2 px-4 text-base font-base text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                             placeholder="Digite o email"
                         >
                     </div>
 
                     <!-- Telefone -->
                     <div>
-                        <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+                        <label for="phone" class="block text-sm font-base text-gray-700 mb-2">
                             WhatsApp*
                         </label>
                         <input
@@ -65,21 +65,21 @@
                             v-model="form.phone"
                             type="tel"
                             required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            class="w-full rounded-xl border border-[#e0e0e0] bg-white  py-2 px-4 text-base font-base text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                             placeholder="+56 9 XXXX XXXX"
                         >
                     </div>
 
                     <!-- Tipo de Documento -->
                     <div>
-                        <label for="document_type" class="block text-sm font-medium text-gray-700 mb-2">
+                        <label for="document_type" class="block text-sm font-base text-gray-700 mb-2">
                             Tipo de Documento *
                         </label>
                         <select
                             id="document_type"
                             v-model="form.document_type"
                             required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            class="w-full rounded-xl border border-[#e0e0e0] bg-white  py-2 px-4 text-base font-base text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                         >
                             <option value="">Selecione o tipo</option>
                             <option value="RUT">RUT (Chile)</option>
@@ -97,7 +97,7 @@
                             v-model="form.document"
                             type="text"
                             required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                            class="w-full rounded-xl border border-[#e0e0e0] bg-white  py-2 px-4 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
                             :placeholder="getDocumentPlaceholder()"
                         >
                     </div>
@@ -107,14 +107,14 @@
                         <button
                             type="button"
                             @click="goBack"
-                            class="px-6 py-2 border border-gray-300 rounded-xl text-gray-700 hover:bg-gray-50 transition-colors"
+                            class="px-6 py-2 border border-gray-300 rounded-full text-gray-700 hover:bg-gray-50 transition-colors"
                         >
                             Cancelar
                         </button>
                         <button
                             type="submit"
                             :disabled="loading"
-                            class="px-6 py-2 bg-indigo-600 text-white rounded-xl hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center space-x-2"
+                            class="px-6 py-2 bg-default text-white rounded-full hover:bg-deep disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center space-x-2"
                         >
                             <div v-if="loading" class="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
                             <span>Cadastrar Cliente</span>

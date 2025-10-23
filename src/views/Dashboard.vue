@@ -1,12 +1,12 @@
 <template>
-    <div class="bg-gray-100 flex h-screen">
+    <div class="flex h-screen">
         <!-- Sidebar Component -->
         <Sidebar />
 
         <!-- Main Content -->
-        <main class="flex-1 p-6 bg-gray-100">
+        <main class="flex-1 p-6 ">
             <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
-            <div class="mt-4 p-6 bg-white rounded-lg shadow-md">
+            <div class="mt-4 p-6 bg-white rounded-lg">
                 <p class="text-gray-600">Pronto para usar API.js com Composition API!</p>
             </div>
         </main>
@@ -16,7 +16,6 @@
 <script setup>
 import { onMounted } from 'vue'
 import Sidebar from '@/components/layout/Sidebar.vue'
-import { api } from '@/services/api.js'
 
 onMounted(() => {
     // Dashboard initialization logic here

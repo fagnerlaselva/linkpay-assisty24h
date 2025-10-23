@@ -11,9 +11,9 @@
             <h1 class="my-8 text-7xl leading-20 font-bold text-indigo-50">Asistencia 24 horas en Chile donde sea que estés</h1>
             <p class="mb-2 text-xl">Nuestro sitio web</p> 
             <div class="flex h-12 justify-start items-center gap-x-6 dark:text-white">
-                <a class="group flex h-min items-center disabled:opacity-50 disabled:hover:opacity-50 hover:opacity-95 justify-center ring-none rounded-lg shadow-lg font-semibold py-2 px-4 font-dm focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 bg-violet-500 border-b-violet-700 disabled:border-0 disabled:bg-violet-500 disabled:text-white ring-white text-black border-b-4 hover:border-0 active:border-0 hover:text-gray-100 active:bg-violet-800 active:text-gray-300 focus-visible:outline-violet-500 text-sm sm:text-base dark:bg-sky dark:border-gray-700 dark:border-b-gray-900"
-                    href="https://assisty24h.cl"
-                    :target="'_blank'">
+                <a class="group flex h-min items-center disabled:opacity-50 disabled:hover:opacity-50 hover:opacity-95 justify-center ring-none rounded-lg shadow-lg font-semibold py-2 px-4 font-dm focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2  bg-white/50  disabled:text-white  text-black  active:border-0 hover:text-gray-100 active:text-gray-300 text-sm sm:text-base"
+                  href="https://assisty24h.cl"
+                  :target="'_blank'">
                     <svg aria-hidden="true" class="h-3 w-3 flex-none fill-violet-600 group-active:fill-current">
                         <path
                             d="m9.997 6.91-7.583 3.447A1 1 0 0 1 1 9.447V2.553a1 1 0 0 1 1.414-.91L9.997 5.09c.782.355.782 1.465 0 1.82Z">
@@ -35,10 +35,10 @@
             <!-- <p class="mb-6 text-gray-500">Pranveer Singh Institute of Technology</p> -->
 
             <!-- Email -->
-            <input type="email" placeholder="Email" class="mb-6 w-full border-b border-gray-300 px-4 py-5 text-lg font-medium text-slate-700 focus:ring-2 focus:ring-indigo-400 focus:outline-none rounded-xl" />
+            <input type="email" placeholder="Email" class="w-full rounded-xl border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md mb-6" />
 
             <!-- Password -->
-            <input type="password" placeholder="Password" class="mb-6 w-full border-b border-gray-300 px-4 py-5 text-lg font-medium text-slate-700 focus:ring-2 focus:ring-indigo-400 focus:outline-none rounded-xl" />
+            <input type="password" placeholder="Password" class="w-full rounded-xl border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md mb-6" />
 
             <!-- Remember Me and Forgot Password -->
             <div class="mb-10 flex items-center justify-between hidden">
