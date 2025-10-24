@@ -9,7 +9,7 @@
             <!-- Header -->
 			<div class="">
 				<div class="flex items-center space-x-4 max-w-lg mx-auto w-full">
-					<button @click="goBack" class="text-gray-500 hover:text-gray-700">
+					<button @click="goBack" class="text-gray-500 hover:font-medium text-[#000]">
 						<svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
 						</svg>
@@ -26,7 +26,7 @@
                     <!-- Nome -->
                        
                     <div>
-                        <label for="name" class="block text-sm font-base text-gray-700 mb-2">
+                        <label for="name" class="block text-sm font-base font-medium text-[#000] mb-2">
                             Nome Completo *
                         </label>
                         <input
@@ -41,7 +41,7 @@
 
                     <!-- Email -->
                     <div>
-                        <label for="email" class="block text-sm font-base text-gray-700 mb-2">
+                        <label for="email" class="block text-sm font-base font-medium text-[#000] mb-2">
                             Email *
                         </label>
                         <input
@@ -56,7 +56,7 @@
 
                     <!-- Telefone -->
                     <div>
-                        <label for="phone" class="block text-sm font-base text-gray-700 mb-2">
+                        <label for="phone" class="block text-sm font-base font-medium text-[#000] mb-2">
                             WhatsApp *
                         </label>
                         <input
@@ -71,7 +71,7 @@
 
                     <!-- Tipo de Documento -->
                     <div>
-                        <label for="document_type" class="block text-sm font-base text-gray-700 mb-2">
+                        <label for="document_type" class="block text-sm font-base font-medium text-[#000] mb-2">
                             Tipo de Documento *
                         </label>
                         <select
@@ -87,7 +87,7 @@
 
                     <!-- Documento -->
                     <div>
-                        <label for="document" class="block text-sm font-base text-gray-700 mb-2">
+                        <label for="document" class="block text-sm font-base font-medium text-[#000] mb-2">
                             Número do Documento *
                         </label>
                         <input
@@ -105,7 +105,7 @@
                         <button
                             type="button"
                             @click="goBack"
-                            class="px-6 py-2 border border-gray-300 rounded-full text-gray-700 hover:bg-gray-50 transition-colors"
+                            class="px-6 py-2 border border-gray-300 rounded-full font-medium text-[#000] hover:bg-gray-50 transition-colors"
                         >
                             Cancelar
                         </button>

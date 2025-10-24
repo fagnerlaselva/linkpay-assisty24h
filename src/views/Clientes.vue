@@ -7,7 +7,7 @@
         <main class="flex-1 p-6">
             <!-- Header -->
             <div class="mb-6">
-                <h1 class="text-2xl font-semibold text-gray-900">Clientes</h1>
+                <h1 class="text-2xl font-bold  text-gray-900">Clientes</h1>
                 <p class="text-gray-600">Gerencie seus clientes e prospects</p>
             </div>
 

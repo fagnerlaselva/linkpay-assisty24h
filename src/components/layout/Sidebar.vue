@@ -1,5 +1,5 @@
 <template>
-    <aside class="w-20 bg-white border-r border-slate-300">
+    <aside class="w-20 bg-white border-r border-[#e0e0e0]]">
         <div class="h-full flex flex-col items-center py-4">
             <!-- Logo -->
             <div class="p-2">

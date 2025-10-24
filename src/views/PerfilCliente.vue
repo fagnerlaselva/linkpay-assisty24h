@@ -26,7 +26,7 @@
 					<div class="space-y-6 max-w-lg">
 						<!-- Nome -->
 						<div>
-							<label class="block text-sm font-base text-gray-700 mb-2">
+							<label class="block text-sm font-base font-medium text-black mb-2">
 								Nome Completo
 							</label>
 							<div class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-gray-900">
@@ -36,7 +36,7 @@
 
 						<!-- Email -->
 						<div>
-							<label class="block text-sm font-base text-gray-700 mb-2">
+							<label class="block text-sm font-base font-medium text-[#000] mb-2">
 								Email
 							</label>
 							<div class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-gray-900">
@@ -46,7 +46,7 @@
 
 						<!-- Telefone -->
 						<div>
-							<label class="block text-sm font-base text-gray-700 mb-2">
+							<label class="block text-sm font-medium text-[#000] mb-2">
 								WhatsApp
 							</label>
 							<div class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-gray-900">
@@ -56,7 +56,7 @@
 
 						<!-- Tipo de Documento -->
 						<div>
-							<label class="block text-sm font-base text-gray-700 mb-2">
+							<label class="block text-sm font-base font-medium text-[#000]mb-2">
 								Tipo de Documento
 							</label>
 							<div class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-gray-900">
@@ -66,7 +66,7 @@
 
 						<!-- Documento -->
 						<div>
-							<label class="block text-sm font-base text-gray-700 mb-2">
+							<label class="block text-sm font-base font-medium text-[#000]mb-2">
 								Número do Documento
 							</label>
 							<div class="w-full px-4 py-2 bg-gray-50 border border-gray-200 rounded-xl text-gray-900">
