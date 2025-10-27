@@ -29,9 +29,12 @@ class ApiService {
 
     // Authentication
     async login(credentials) {
-        return this.request('/auth/login', {
+        return this.request('/auth/signin', {
             method: 'POST',
-            body: JSON.stringify(credentials),
+            body: JSON.stringify({
+                username: credentials.username,
+                password: credentials.password,
+            }),
         })
     }
 

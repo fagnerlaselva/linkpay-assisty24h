@@ -35,10 +35,10 @@
             <!-- <p class="mb-6 text-gray-500">Pranveer Singh Institute of Technology</p> -->
 
             <!-- Email -->
-            <input type="email" placeholder="Email" class="w-full rounded-xl border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md mb-6" />
+            <input v-model="username" type="text" placeholder="Username" class="w-full rounded-xl border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md mb-6" />
 
             <!-- Password -->
-            <input type="password" placeholder="Password" class="w-full rounded-xl border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md mb-6" />
+            <input v-model="password" type="password" placeholder="Password" class="w-full rounded-xl border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md mb-6" />
 
             <!-- Remember Me and Forgot Password -->
             <div class="mb-10 flex items-center justify-between hidden">
@@ -51,7 +51,11 @@
 
             <!-- Login Button -->
             <!-- <button class="mb-4 w-full rounded-lg bg-indigo-600 py-3 font-bold text-white transition hover:bg-indigo-700">Log In</button> -->
-            <button @click="login" class="mb-6 w-full transform-gpu rounded-full bg-default from-blue-500 to-purple-500 px-8 py-4 font-bold text-white transition-transform hover:-translate-y-1 hover:shadow-lg">Vamos allá</button>
+            <button @click="login"
+              :disabled="loading"
+              class="mb-6 w-full transform-gpu rounded-full bg-default from-blue-500 to-purple-500 px-8 py-4 font-bold text-white transition-transform hover:-translate-y-1 hover:shadow-lg">
+              {{ loginButtonText }}
+            </button>
 
             <!-- Or -->
             <div class="mb-6 flex items-center justify-center hidden">
@@ -83,15 +87,35 @@
 <script setup>
 import { useRouter } from 'vue-router'
 import { api } from '@/services/api'
+import { ref } from 'vue'
 
 const router = useRouter()
+const username =  ref('')
+const password =  ref('')
+const loginButtonText = ref('Vamos allá')
+const loading = ref(false)
+
 
 const login = async () => {
   const credentials = {
-    email: 'user@example.com', // replace with actual data
-    password: 'password' // replace with actual data
+    username: username.value, // replace with actual data
+    password: password.value // replace with actual data
+
   }
-  await api.login(credentials)
-  router.push('/dashboard')
+  try {
+    loginButtonText.value = 'Entrando...'
+    loading.value = true
+    const response = await api.login(credentials)
+    localStorage.setItem('accessToken', response.accessToken)
+    router.push('/dashboard')
+
+  } catch (error) {
+    alert('Login failed. Please check your credentials and try again.')
+    password.value = ''
+  } finally {
+    loading.value = false
+    loginButtonText.value = 'Vamos allá'
+  }
+  
 }
 </script>
