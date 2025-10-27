@@ -35,7 +35,7 @@
             <!-- <p class="mb-6 text-gray-500">Pranveer Singh Institute of Technology</p> -->
 
             <!-- Email -->
-            <input v-model="username" type="text" placeholder="Username" class="w-full rounded-xl border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md mb-6" />
+            <input v-model="username" type="text" placeholder="Username" class="w-full  rounded-xl border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md mb-6" />
 
             <!-- Password -->
             <input v-model="password" type="password" placeholder="Password" class="w-full rounded-xl border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md mb-6" />
@@ -53,7 +53,13 @@
             <!-- <button class="mb-4 w-full rounded-lg bg-indigo-600 py-3 font-bold text-white transition hover:bg-indigo-700">Log In</button> -->
             <button @click="login"
               :disabled="loading"
-              class="mb-6 w-full transform-gpu rounded-full bg-default from-blue-500 to-purple-500 px-8 py-4 font-bold text-white transition-transform hover:-translate-y-1 hover:shadow-lg">
+              :class="[
+                'mb-6 w-full transform-gpu rounded-full px-8 py-4 font-bold text-white transition-all duration-300 flex items-center justify-center gap-2',
+                loading 
+                  ? 'bg-indigo-700 cursor-not-allowed animate-pulse shadow-lg' 
+                  : 'bg-default hover:bg-deep hover:-translate-y-1 hover:shadow-lg'
+              ]">
+              <div v-if="loading" class="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
               {{ loginButtonText }}
             </button>
 
@@ -107,6 +113,8 @@ const login = async () => {
     loading.value = true
     const response = await api.login(credentials)
     localStorage.setItem('accessToken', response.accessToken)
+    const payload = JSON.parse(atob(response.accessToken.split('.')[1]))
+    localStorage.setItem('userData', JSON.stringify(payload))
     router.push('/dashboard')
 
   } catch (error) {
